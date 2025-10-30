@@ -220,8 +220,10 @@ while(SerialAT.available()) {
 
 2. Check I2C address (some boards use 0x19 instead of 0x18):
    ```cpp
-   // In setup(), try:
-   if (!lis.begin(0x19)) {  // Was 0x18
+   // In setup(), find this line and try changing the address:
+   if (!lis.begin(0x19)) {  // Was 0x18, try 0x19
+     Serial.println("Failed to initialize accelerometer!");
+   }
    ```
 
 3. Check I2C pins are correct for your board
@@ -337,11 +339,31 @@ The serial monitor provides detailed debug information:
 
 ### Enable Debug Mode
 
-Add this to see more details:
+Add debug output to see more details during operation:
 ```cpp
-// At the top of main.cpp
-#define DEBUG_MODE
-// Then add Serial.println() statements where needed
+// In loop(), add debug statements to see what's happening:
+void loop() {
+  // ... existing code ...
+  
+  // Add debug output
+  if (isSecured && (millis() % 10000 == 0)) {  // Every 10 seconds
+    Serial.print("Debug: Armed, GPS=");
+    Serial.print(gpsFixed ? "Fixed" : "No Fix");
+    Serial.print(", Accel X=");
+    Serial.println(securedAccelX);
+  }
+  
+  // ... rest of code ...
+}
+```
+
+Or add detailed debug in specific functions:
+```cpp
+// In checkForMovement(), add:
+Serial.print("Movement check: delta=");
+Serial.print(totalMovement);
+Serial.print(", threshold=");
+Serial.println(MOVEMENT_THRESHOLD);
 ```
 
 ### Report Issues
