@@ -8,6 +8,7 @@ A GPS tracker designed for bike security using the LilyGO A7670E modem. The trac
 - **[Wiring Guide](WIRING.md)** - Hardware setup and connections
 - **[Customization Guide](CUSTOMIZATION.md)** - Customize for your needs
 - **[Troubleshooting Guide](TROUBLESHOOTING.md)** - Fix common issues
+- **[Security Considerations](SECURITY.md)** - Security and privacy information
 
 ## Features
 
