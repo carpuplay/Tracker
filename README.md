@@ -2,6 +2,13 @@
 
 A GPS tracker designed for bike security using the LilyGO A7670E modem. The tracker monitors your bike's location and sends SMS alerts when movement is detected after the bike has been secured.
 
+## 📚 Documentation
+
+- **[Quick Start Guide](QUICKSTART.md)** - Get started in 5 minutes
+- **[Wiring Guide](WIRING.md)** - Hardware setup and connections
+- **[Customization Guide](CUSTOMIZATION.md)** - Customize for your needs
+- **[Troubleshooting Guide](TROUBLESHOOTING.md)** - Fix common issues
+
 ## Features
 
 - **GPS Tracking**: Real-time location tracking using the A7670E's built-in GPS
